@@ -1,12 +1,29 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}
-    Home - MegaParse
+    Home - Your Django App
 {% endblock %}
 
 {% block content %}
-    <div class="text-center mt-5">
-        <h1>Welcome to MegaParse</h1>
-        <p>Your ultimate data parsing solution.</p>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <h1 class="display-4 mb-4">Welcome to Your Personalized Django App</h1>
+                <p class="lead mb-5">
+                    This is your starting point! Customize this page and the entire application to fit your unique needs. Build something amazing with the power of Python and Django.
+                </p>
+
+                <div class="d-flex justify-content-center align-items-center mb-5">
+                    <img src="{% static 'images/django.png' %}" alt="Django Logo" style="max-height: 300px;" class="mr-3"/>
+                    <img src="{% static 'images/python.png' %}" alt="Python Logo" style="max-height: 300px;"/>
+                </div>
+
+                <p>
+                    Get started by modifying templates, building out models, and hooking up your favorite tools!
+                </p>
+
+            </div>
+        </div>
     </div>
 {% endblock %}
