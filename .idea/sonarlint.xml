@@ -3,7 +3,7 @@
   <component name="SonarLintProjectSettings">
     <option name="moduleMapping">
       <map>
-        <entry key="megaparse" value="megaparse" />
+        <entry key="django-base-api" value="megaparse" />
       </map>
     </option>
   </component>
