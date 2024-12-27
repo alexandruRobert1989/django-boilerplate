@@ -25,6 +25,9 @@ DEBUG = True
 # All hosts allowed, only for development
 ALLOWED_HOSTS = ['*']
 
+# Allow all origins only for development
+CSRF_TRUSTED_ORIGINS = ['*']
+
 # Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -35,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Add your custom apps here
 ]
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
