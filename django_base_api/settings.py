@@ -104,12 +104,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / "static"]  # Include this for custom static files
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Authentication settings
-LOGIN_URL = '/login/'  # URL for the login page
+LOGIN_URL = '/login/'  # URL for the login pagepython manage.py collectstaticpython manage.py collectstatic
 LOGIN_REDIRECT_URL = '/'  # URL to redirect after a successful login
 LOGOUT_REDIRECT_URL = '/'  # URL to redirect after logging out
