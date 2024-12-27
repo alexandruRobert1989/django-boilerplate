@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}
+    User Information
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <h1 class="mb-4">Generic User Information</h1>
+                <ul class="list-group">
+                    <li class="list-group-item"><strong>Username:</strong> GenericUser</li>
+                    <li class="list-group-item"><strong>Email:</strong> genericuser@example.com</li>
+                    <li class="list-group-item"><strong>First Name:</strong> Generic</li>
+                    <li class="list-group-item"><strong>Last Name:</strong> User</li>
+                    <li class="list-group-item"><strong>Role:</strong> Viewer</li>
+                    <li class="list-group-item"><strong>Last Login:</strong> 2024-12-25 10:30:00</li>
+                </ul>
+                <a href="{% url 'home' %}" class="btn btn-primary mt-4">Go Back</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

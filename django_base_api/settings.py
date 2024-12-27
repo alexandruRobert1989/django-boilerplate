@@ -58,6 +58,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django_base_api.context_processors.is_user_group_context',  # Correctly added
             ],
         },
     },
@@ -98,3 +99,8 @@ STATICFILES_DIRS = [BASE_DIR / "static"]  # Include this for custom static files
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Authentication settings
+LOGIN_URL = '/login/'  # URL for the login page
+LOGIN_REDIRECT_URL = '/'  # URL to redirect after a successful login
+LOGOUT_REDIRECT_URL = '/'  # URL to redirect after logging out

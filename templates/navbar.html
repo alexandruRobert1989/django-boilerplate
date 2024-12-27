@@ -12,7 +12,20 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'page-two' %}">Another page</a>
                 </li>
-
+                {% if user.is_authenticated %}
+                    {% if is_user_group %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'user_page' %}">User</a>
+                        </li>
+                    {% endif %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}">Login</a>
+                    </li>
+                {% endif %}
             </ul>
         </div>
     </div>
