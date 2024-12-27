@@ -23,7 +23,7 @@ SECRET_KEY = 'django-insecure-)w(j_m!@#fvp#xebql-eca-!@+v#rccypya6e=uls*1i%q@h=q
 DEBUG = False
 
 # All hosts allowed, only for development
-ALLOWED_HOSTS = ['https://django.alexd.page', 'http://127.0.0.1', 'http://localhost']
+ALLOWED_HOSTS = ['django.alexd.page', '127.0.0.1', 'localhost']
 
 # CORS settings
 CSRF_TRUSTED_ORIGINS = [
