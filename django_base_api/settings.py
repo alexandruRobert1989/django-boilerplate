@@ -25,9 +25,12 @@ DEBUG = False
 # All hosts allowed, only for development
 ALLOWED_HOSTS = ['*']
 
-# Allow all origins only for development
-CSRF_TRUSTED_ORIGINS = ['*']
-
+# CORS settings
+CSRF_TRUSTED_ORIGINS = [
+    'https://django.alexd.page',
+    'http://127.0.0.1',
+    'http://localhost',
+]
 # Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
