@@ -13,9 +13,14 @@
                     <a class="nav-link" href="{% url 'page-two' %}">Another page</a>
                 </li>
                 {% if user.is_authenticated %}
-                    {% if is_user_group %}
+                    {% if is_user_or_staffuser %}
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'user_page' %}">User</a>
+                        </li>
+                    {% endif %}
+                    {% if is_staffuser_or_superuser %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'staffuser_page' %}">Staff User</a>
                         </li>
                     {% endif %}
                     <li class="nav-item">

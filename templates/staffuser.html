@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Staff User Information
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <h1 class="mb-4">Staff User Information</h1>
+                <p class="lead">
+                    Welcome to the Staff User page. Here you can access tools and resources
+                    specifically designed for staff and administrative purposes.
+                </p>
+                <ul class="list-group">
+                    <li class="list-group-item"><strong>Feature 1:</strong> Manage Users</li>
+                    <li class="list-group-item"><strong>Feature 2:</strong> Review Reports</li>
+                    <li class="list-group-item"><strong>Feature 3:</strong> Admin Dashboard Access</li>
+                </ul>
+                <a href="{% url 'home' %}" class="btn btn-primary mt-4">Go Back</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

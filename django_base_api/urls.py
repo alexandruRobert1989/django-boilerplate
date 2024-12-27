@@ -13,6 +13,8 @@ urlpatterns = [
     path('login/', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
     path('logout/', views.custom_logout, name='logout'),
     path('user/', views.user, name='user_page'),
+    path('staffuser/', views.staffuser, name='staffuser_page'),  # Add this line
+
 
 
 
