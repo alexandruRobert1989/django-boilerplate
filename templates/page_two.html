@@ -1,38 +1,104 @@
 {% extends "base.html" %}
 
 {% block title %}
-    Your Django App another page example
+    Your Django App - Sales and Revenue Chart
 {% endblock %}
 
 {% block content %}
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-8 offset-md-2">
-                <h2 class="mb-4">Exploring second example page</h2>
+                <h2 class="mb-4">Sales and Revenue Insights</h2>
                 <p class="lead mb-4">
-                    This is a sample page within your Django application. Feel free to customize this content to fit your needs.
+                    This page includes an advanced chart showcasing sales and revenue data across multiple regions. Explore the trends below.
                 </p>
 
-                <p>
-                    You can add various components, such as headings, paragraphs, lists, forms, or any other HTML elements to make this page uniquely yours.
-                </p>
-
-                <h3 class="mt-4 mb-3">Key Features</h3>
+                <h3 class="mt-4 mb-3">Key Insights</h3>
                 <ul>
-                    <li>Easy to understand structure</li>
-                    <li>Responsive design with Bootstrap</li>
-                    <li>Built using Python and Django</li>
-                    <li>Ready for customization</li>
+                    <li>Region-wise comparison</li>
+                    <li>Trends in sales and revenue over six months</li>
+                    <li>Interactive data visualization</li>
                 </ul>
 
-
-                <h3 class="mt-4 mb-3">Example Heading</h3>
+                <!-- Graph Section -->
+                <h3 class="mt-5 mb-3">Monthly Sales and Revenue</h3>
                 <p>
-                    Here is another paragraph with more text to demonstrate content flow. You can make your pages as long and detailed as you need.
-                    Consider using consistent heading levels to organize content.
+                    Below is a chart that compares sales figures and revenue across three key regions: North America, Europe, and Asia.
                 </p>
+                <canvas id="advancedChart" width="400" height="300"></canvas>
+
                 <a href="{% url 'home' %}" class="btn btn-primary mt-4">Go Back</a>
             </div>
         </div>
     </div>
+
+    <!-- Add Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('advancedChart').getContext('2d');
+        const advancedChart = new Chart(ctx, {
+            type: 'bar', // Other options: 'line', 'pie', 'radar', 'doughnut', etc.
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+                datasets: [
+                    {
+                        label: 'North America Sales ($)',
+                        data: [1200, 1500, 1800, 2000, 1700, 1900],
+                        backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Europe Sales ($)',
+                        data: [1000, 1400, 1300, 1600, 1500, 1700],
+                        backgroundColor: 'rgba(255, 99, 132, 0.6)',
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Asia Sales ($)',
+                        data: [900, 1100, 1200, 1300, 1400, 1500],
+                        backgroundColor: 'rgba(75, 192, 192, 0.6)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Monthly Sales and Revenue Comparison'
+                    },
+                    tooltip: {
+                        enabled: true,
+                        mode: 'index',
+                        intersect: false
+                    },
+                    legend: {
+                        display: true,
+                        position: 'top'
+                    }
+                },
+                scales: {
+                    x: {
+                        stacked: false,
+                        title: {
+                            display: true,
+                            text: 'Months'
+                        }
+                    },
+                    y: {
+                        stacked: false,
+                        title: {
+                            display: true,
+                            text: 'Amount ($)'
+                        },
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
 {% endblock %}
