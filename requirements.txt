@@ -3,4 +3,4 @@ gunicorn==20.1.0  # WSGI server for production
 sqlparse==0.5.3  # Required by Django
 python-dotenv==1.0.1  # Environment variable management
 requests==2.32.3  # HTTP requests
-psycopg2-binary==2.9.6  # For PostgreSQL (optional, remove if not needed)
+psycopg==3.1.12
