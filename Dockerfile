@@ -4,7 +4,6 @@ FROM python:3.10-slim
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
-ENV PORT 8080  # Set the default Cloud Run port
 
 # Set working directory in the container
 WORKDIR /app
@@ -18,8 +17,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the project files into the container
 COPY . /app/
 
-# Expose the correct port for Cloud Run
+# Expose the port Django will run on
 EXPOSE 8080
 
-# Run the Django development server, binding it to Cloud Run's expected port
-CMD ["sh", "-c", "python manage.py migrate && python manage.py runserver 0.0.0.0:$PORT"]
+# Run the Django development server
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8080"]
